@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>IdleRPG Administrator Commands</title>
+
+<style type="text/css">
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+}
+h2 {
+	font-size:medium;
+	font-weight:bold;
+}
+.usage {
+	font-size:x-small;
+	font-weight:bold;
+}
+.code {
+	font-size:x-small;
+	font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>IdleRPG Administrator Commands</h1>
+<p>This is not the full list of commands for the Idle RPG bot, but only the list
+of admin commands.</p>
+
+<h2>INFO</h2>
+<p class="usage">Usage: /msg IdleBot INFO</p>
+<p>retrieve some fairly useless stats about the bot.</p>
+
+<h2>DIE</h2>
+<p class="usage">Usage: /msg IdleBot DIE</p>
+<p>kills the bot</p>
+
+<h2>HOG</h2>
+
+<p class="usage">Usage: /msg IdleBot HOG</p>
+<p>Summons the Hand of God. Performs a calamity or helps a single player</p>
+
+<h2>RESTART</h2>
+<p class="usage">Usage: /msg IdleBot RESTART</p>
+<p>Restarts the bot</p>
+
+<h2>CHPASS</h2>
+<p class="usage">Usage: /msg IdleBot CHPASS [user] [password]</p>
+<p>Changes a characters password in the database</p>
+
+<h2>CHCLASS</h2>
+<p class="usage">Usage: /msg IdleBot CHCLASS [user] [class]</p>
+<p>Changes a character's class in the database.</p>
+
+<h2>CHUSER</h2>
+<p class="usage">Usage: /msg IdleBot CHUSER [user] [new user]</p>
+<p>Changes a user's name in the database. Should be avoided. Just have the user register a new 
+account and delete the old one.</p>
+
+<h2>PUSH</h2>
+
+<p class="usage">Usage: /msg IdleBot PUSH [user] [seconds]</p>
+<p>Push a player toward his/her goal by subtracting time from the next time to level. A 
+negative time can be inserted to penalize a user. Please note, you can cause a user to get 
+negative time which will cause issues.</p>
+
+<h2>DEL</h2>
+<p class="usage">Usage: /msg IdleBot DEL [user]</p>
+<p>Deletes the user from the database</p>
+
+<h2>FSAY</h2>
+<p class="usage">Usage: /msg IdleBot FSAY [message]</p>
+<p>Says the message in the channel, to avoid penalties</p>
+
+<h2>JUMP</h2>
+<p class="usage">Usage: /msg IdleBot JUMP [server][:port]</p>
+<p>Connects the bot to the specified server</p>
+
+<h2>SILENT</h2>
+<p class="usage">Usage: /msg IdleBot SILENT [mode]</p>
+<p>Switch the bot between these modes:<br />
+0 - bots send all privmsgs<br />
+1 - Disables messages to the channel<br />
+
+2 - Disables private messages and notices to users<br />
+3 - Disables private messages and notices to users and channels</p>
+
+<h2>BACKUP</h2>
+<p class="usage">Usage: /msg IdleBot BACKUP</p>
+<p>tell bot to copy $opts{&#39;dbfile&#39;} to .dbbackup/$opts{&#39;dbfile&#39;}</p>
+
+<h2>PAUSE</h2>
+
+<p class="usage">Usage: /msg IdleBot PAUSE</p>
+<p>Enables/disables pause mode</p>
+
+<h2>PEVAL</h2>
+<p class="usage">Usage: /msg IdleBot PEVAL [code]</p>
+<p>execute arbitrary argument as Perl code. Queues output &gt; 3 lines
+     or &gt;1k of text. Some useful PEVAL commands:
+	 <ul>
+		<li>Delete all accounts not logged in in 4 weeks (See also: DELOLD):<br />
+
+         <span class="code">/msg bot PEVAL delete $rps{$_} for grep { 
+time()-$rps{$_}{lastlogin} &gt; 3600*24*7*4 &amp;&amp; !$rps{$_}{online} } keys 
+%rps;</span></li>
+		 <li>Remove one hour from everyone&#39;s clocks:<br />
+         <span class="code">/msg bot PEVAL $rps{$_}{next} -= 3600 for keys %rps;</span></li>
+		 <li>List all online users, separated by commas:<br />
+
+         <span class="code">/msg bot PEVAL join(&#39;, &#39;,grep { $rps{$_}{online} } keys 
+%rps);</span></li>
+		 <li>View contents of a file on remote host:<br />
+         <span class="code">/msg bot peval `cat file`</span></li>
+		 <li>Turn on debug mode:<br />
+         <span class="code">/msg bot peval $opts{debug}=1;</span></li>
+
+		 <li>Force write-out of database:<br />
+         <span class="code">/msg bot peval writedb();</span></li>
+	</ul>
+</p>
+
+<h2>DELOLD</h2>
+<p class="usage">Usage: /msg IdleBot DELOLD [days]</p>
+<p>Removed accounts for users not logged in in the specified number of days.</p>
+
+<h2>CLEARQ</h2>
+<p class="usage">Usage: /msg IdleBot CLEARQ</p>
+<p>Clears the outgoing message queue.</p>
+
+<h2>MKADMIN</h2>
+<p class="usage">Usage: /msg IdleBot MKADMIN [user]</p>
+<p>Sets the specified user as an administrator</p>
+
+</body>
+
+</html>
+

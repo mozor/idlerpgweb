@@ -1,0 +1,158 @@
+body { 
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; 
+    color: black;
+    margin:0;
+    padding:0;
+    background:#505050 url('bg.gif');
+    background-repeat:repeat;
+    height: 100%;
+    font-size: 13px;
+}
+
+#outborder 
+{
+  border-style:solid;
+  border-width:10px;
+  border-color:#2e2e2e;
+  border-top:none;
+  border-bottom:none;
+  height:100%;
+}
+
+#inborder 
+{
+  border-style:solid;
+  border-color:black;
+  border-width:2px;
+  border-top:none;
+  border-bottom:none;
+  height:100%;
+}
+
+h1 { margin-bottom: 0px; margin-top: 0px; font-size: 18px; }
+h2 { margin-bottom: 0px; font-size: 13px; }
+
+p { font-size: 13px; }
+
+a { text-decoration: underline; color: #000000; }
+a:hover { text-decoration: underline; color: black; }
+
+div.head {
+   text-align: center;
+   width: 100%;
+   margin: 0 auto;
+   background: #FFFFFF;
+}
+
+div.container {
+width: 850px;
+margin: 0 auto;
+background: #FFFFFF;
+height: 100%;
+}
+
+div.menu {
+   width: 100%;
+   background: #FFFFFF;
+}
+div#menu a.home { color: #000000; background: #c0c0c0; border: 1px solid #000000; }
+div#menu a.home:hover { background: #c0c0c0; border: 1px solid #000000; }
+div#menu a {
+   text-align: center;
+   margin: 0px;
+   display: block;
+   border: 1px solid #c0c0c0;
+   text-decoration: none;
+}
+
+div#menu a:hover { border: 1px solid #000000; background: #c0c0c0; text-decoration: none; }
+
+div.menuthings {
+   float: left;
+   width: 20%;
+}
+
+div.content {
+   border: 1px solid #c0c0c0; 
+   margin-top: 0px;
+   padding: 20px;
+   background: #FFFFFF;
+}
+
+div.footer {
+   border: 1px solid #c0c0c0; 
+   margin-top: 10px;
+   padding: 10px;
+   background: #DDDDDD;
+   text-align: center;
+   height: 100%;
+}
+
+
+table.uniques {
+   border: 1px solid #c0c0c0;
+   padding: 5px;
+   text-align: left;
+}
+table.uniques td {
+   padding-left: 10px;
+}
+   
+table.penalty {
+   border: 1px solid #c0c0c0;
+   padding: 5px;
+   text-align: left;
+}
+table.penalty th {
+   text-align: right;
+}
+table.penalty td {
+
+}
+
+/* Styles for the userlist */
+li.online { font-weight: bold; }
+li.offline { color: #c0c0c0; }
+a.offline { color: #707070; }
+#map {
+    width: 550px;
+    height: 550px;
+    background-image: url(newmap.png);
+}
+
+
+table.forum {
+    border: 1px solid #c0c0c0;
+    table-layout: fixed;
+    overflow: auto;
+}
+
+table.forum td,tr,caption,thead,tfoot,th {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.tdblue { background-color: #ffffdf; }
+.tdgray { background-color: #eeeee0; }
+.tdred {
+    border: 1px solid red;
+    background-color: #FFCCCC;
+}
+.smallest {
+    font-size: 11px;
+}
+
+div.clear
+{
+    clear: both;
+}
+
+p.indent
+{
+   margin-left:25px;
+   text-indent: -25px;
+}
+
+code
+{
+   font-size: 12px;
+}
